@@ -14,4 +14,12 @@ class TestClass:
         # Then - Desfecho
         assert resultado == esperado
 
-        pass
+    def test_quando_sobre_nome_recebe_Pollyana_Rocha_deve_retornar_Rocha(self):
+        entrada = ' Pollyana Rocha '# Given
+        esperado = 'Rocha'
+
+        pollyana = Funcionario(entrada, '06/09/2001', 2000)
+        resultado = pollyana.sobrenome() #When
+
+        assert resultado == esperado
+   
