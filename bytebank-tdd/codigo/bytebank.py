@@ -34,3 +34,18 @@ class Funcionario:
 
     def __str__(self):
         return f'Funcionario({self._nome}, {self._data_nascimento}, {self._salario})'
+    
+
+    def decrescimo_salario(self):
+        sobrenomes = ['Bragança', 'Windsor', 'Bourbon', 'Yamato', 'Al Saud', 'Khan', 'Tudor', 'Ptolomeu']
+        # prof solução
+        if self._salario >= 100000 and (self.sobrenome() in sobrenomes):
+            decrescimo = self._salario * 0.1
+            self._salario -= decrescimo
+        
+        # minha solução
+        #if self._salario >= 100000 and (self.sobrenome() in sobrenomes):
+        #    desconto_salarial =  self._salario * 0.1
+        #    decrescimo_salario = self._salario - desconto_salarial
+        #    self._salario = decrescimo_salario
+        #return decrescimo
