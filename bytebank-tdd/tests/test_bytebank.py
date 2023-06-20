@@ -37,4 +37,21 @@ class TestClass:
 
         #then
         assert resultado == esperado
-   
+    
+
+    #meu teste
+    def test_quando_funcionario_recebe_1000_deve_receber_bonus_10_porcentos(self):
+        entrada_minima = 1000
+        #entrada_maxima = 10000
+        #entrada_q_nao_consedera_bonus = 10001
+        esperado = 1100
+
+        funcionario_teste_minimo = Funcionario('teste minimo', '11/11/2000', entrada_minima)
+        #funcionario_teste_maximo = Funcionario('teste maximo', '11/11/2000', entrada_maxima)
+        
+        #funcionario_teste_maximo.calcular_bonus()
+        funcionario_teste_minimo.calcular_bonus()
+        resultado = funcionario_teste_minimo.salario
+        #resultado = funcionario_teste_maximo.salario
+
+        assert resultado == esperado
