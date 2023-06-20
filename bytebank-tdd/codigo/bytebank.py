@@ -35,11 +35,13 @@ class Funcionario:
     def __str__(self):
         return f'Funcionario({self._nome}, {self._data_nascimento}, {self._salario})'
     
+    def _diretor(self):
+        sobrenomes = ['Bragança', 'Windsor', 'Bourbon', 'Yamato', 'Al Saud', 'Khan', 'Tudor', 'Ptolomeu']
+        return self._salario >= 100000 and (self.sobrenome() in sobrenomes)      
 
     def decrescimo_salario(self):
-        sobrenomes = ['Bragança', 'Windsor', 'Bourbon', 'Yamato', 'Al Saud', 'Khan', 'Tudor', 'Ptolomeu']
         # prof solução
-        if self._salario >= 100000 and (self.sobrenome() in sobrenomes):
+        if self._diretor():
             decrescimo = self._salario * 0.1
             self._salario -= decrescimo
         
