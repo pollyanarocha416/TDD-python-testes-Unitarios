@@ -30,8 +30,9 @@ class Funcionario:
         if self._salario >= 1000 and self._salario <= 10000:
             valor = self._salario * 0.1
             self._salario += valor
-        else: Exception('O salario é muito alto para receber um bônus')
-
+        else: 
+            Exception('O salario é muito alto para receber um bônus')
+    
     def __str__(self):
         return f'Funcionario({self._nome}, {self._data_nascimento}, {self._salario})'
     

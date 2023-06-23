@@ -55,7 +55,7 @@ class TestClass:
         #resultado = funcionario_teste_maximo.salario
 
         assert resultado == esperado
-        
+
     @mark.calcular_bonus
     def test_quando_funcionario_recebe_10000_retornar_exeption(self):
         with pytest.raises(Exception):
@@ -65,3 +65,12 @@ class TestClass:
             resultado = funconario_teste.calcular_bonus()  # when
 
             assert resultado  # then
+
+    def test_retorno_str(self):
+        nome, data_nascimento, salario = 'Polly', '12/03/2000', 1000# Given
+        esperado = 'Funcionario(Polly, 12/03/2000, 1000)'
+
+        pollyana = Funcionario(nome, data_nascimento, salario)
+        resultado = pollyana.__str__() #When
+
+        assert resultado == esperado

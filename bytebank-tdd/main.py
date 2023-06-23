@@ -1,4 +1,4 @@
-from bytebank import Funcionario
+from codigo.bytebank import Funcionario
 
 #polly = Funcionario('Polly', '06/09/2001', 2000)
 #print(polly.idade())
