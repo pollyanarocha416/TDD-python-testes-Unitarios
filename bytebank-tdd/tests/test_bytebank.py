@@ -55,6 +55,7 @@ class TestClass:
         #resultado = funcionario_teste_maximo.salario
 
         assert resultado == esperado
+        
     @mark.calcular_bonus
     def test_quando_funcionario_recebe_10000_retornar_exeption(self):
         with pytest.raises(Exception):
