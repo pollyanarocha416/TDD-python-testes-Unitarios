@@ -46,3 +46,13 @@ class Funcionario:
         if self._diretor():
             decrescimo = self._salario * 0.1
             self._salario -= decrescimo
+
+    def desconto_fgts(self) -> float:
+        if self._salario <= 1300:
+            
+            return self._salario
+        else:
+            desconto = self._salario * 0.1
+            self._salario -= desconto
+
+            return self._salario

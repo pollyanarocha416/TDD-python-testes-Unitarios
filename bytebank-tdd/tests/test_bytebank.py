@@ -39,7 +39,7 @@ class TestClass:
         #then
         assert resultado == esperado
     
-    @mark.calcular_bonus
+
     def test_quando_funcionario_recebe_1000_deve_receber_bonus_10_porcentos(self):
         entrada_minima = 1000
         #entrada_maxima = 10000
@@ -56,7 +56,7 @@ class TestClass:
 
         assert resultado == esperado
 
-    @mark.calcular_bonus
+
     def test_quando_funcionario_recebe_10000_retornar_exeption(self):
         with pytest.raises(Exception):
             entrada = 10000  # given
@@ -72,5 +72,25 @@ class TestClass:
 
         pollyana = Funcionario(nome, data_nascimento, salario)
         resultado = pollyana.__str__() #When
+
+        assert resultado == esperado
+
+    def test_retornar_salario_igual_a_1500_retornar_1350_depois_de_descontado_fgts_de_10_porcentos(self):
+        salario = 1500
+        esperado = 1350
+
+        funcionario_teste = Funcionario('teste', '11/11/2001', salario)
+
+        resultado = funcionario_teste.desconto_fgts()
+
+        assert resultado == esperado
+
+    def test_retornar_somente_salario_quando_salario_for_menor_ou_igual_ha_1300(self):
+        salario = 1300
+        esperado = 1300
+
+        funcionario_teste = Funcionario('teste', '11/11/2001', salario)
+
+        resultado = funcionario_teste.desconto_fgts()
 
         assert resultado == esperado
